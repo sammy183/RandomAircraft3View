@@ -38,7 +38,7 @@ def regather_links():
     print("Gathering aircraft pages (please wait 30s)...")
 
     # gather aircraft links
-    a_to_z = links[8:-2]
+    a_to_z = list(set(links[8:-2])) # filter for unique header links
     all_three_views = []
 
     for mainlink in a_to_z:
