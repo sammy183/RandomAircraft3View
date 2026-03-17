@@ -41,18 +41,24 @@ def regather_links():
     a_to_z = list(set(links[8:-2])) # filter for unique header links
     all_three_views = []
 
+    skip_strs = ['xiti.com', 'index', 'picmosaic', '3vues/3vues']
+
     for mainlink in a_to_z:
         response = requests.get(mainlink)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
-
         for a in soup.find_all("a", href=True):
             href = a["href"]
             if href.startswith("#") or href.startswith("mailto"):
                 continue
             full_url = urljoin(BASE_URL, href)
+            
+            # skip extra links
+            if any(sub in full_url for sub in skip_strs): 
+                continue
+            
             all_three_views.append(full_url)
-
+    
     print(f"Links for {len(all_three_views)} aircraft gathered!")
 
     with open(FILE_PATH, "w") as file:
