@@ -1,5 +1,5 @@
 # How to use:
-1. Download the exe
+1. Download the exe (or the .py file)
 2. Run
 3. Be curious! 
 
