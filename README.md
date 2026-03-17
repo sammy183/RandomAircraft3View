@@ -13,3 +13,5 @@ As an aircraft history buff too, it's lead me down some fascinating rabbit holes
 
 This project is simply a wrapper of Richard Ferriere's site. He deserves all the credit for uploading so many 3-views of such a diverse range of aircraft.
 Please, check out his other work at http://richard.ferriere.free.fr/index.html!
+
+(extra note: to create the exe from the python file, simply run "pyinstaller --onefile RandomAircraft3View.py")
